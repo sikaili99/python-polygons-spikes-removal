@@ -39,7 +39,14 @@ Simple example of using this tool to process a file:
 
 ```
 $ python3  main.py -o data-file/spiky-output.gpkg data-file/spiky-polygons.gpkg
+
 ```
+
+## Flowchart diagram for the algorithm for the spike removal application
+
+![flowchart-spike-algorithm](https://user-images.githubusercontent.com/33897492/143893704-eaf3c378-e832-4eb2-b66b-f02a9d282a8b.png)
+
+
 ## Note
 
 You can update the dataset in the data-file directory.
