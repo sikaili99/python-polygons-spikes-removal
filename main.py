@@ -23,7 +23,8 @@ def main(filename: str, angle: float, distance: float, output: str):
     if not spike_utils.validate_crs(data):
         raise (
             """
-            The input file doesn't have a valid coordinate seference system or it does not have a
+            The input file doesn't have a valid coordinate seference
+            system or it does not have a
             geographic coordinate seference system.
             """
         )
