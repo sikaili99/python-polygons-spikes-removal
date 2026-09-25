@@ -18,8 +18,8 @@ def load_geopackage(path: str) -> geopandas.GeoDataFrame:
 
 def save_geopackage(path: str, data: geopandas.GeoDataFrame) -> None:
     """
-    Save a `GeoDataFrame` to the disk at the specified path. If the path
-    already exists, the existing destination will be overwritten.
+    Save a `GeoDataFrame` to the disk at the specified path as a single
+    Geopackage layer. If the path already exists it is overwritten.
 
     :param path: Path used for the output file
     :type path: str
@@ -27,8 +27,7 @@ def save_geopackage(path: str, data: geopandas.GeoDataFrame) -> None:
     :param data: Output `GeoDataFrame` instance
     :type data: GeoDataFrame
     """
-    for row in data.itertuples():
-        data.to_file(path, driver="GPKG", layer=row.name)
+    data.to_file(path, driver="GPKG")
 
 
 def validate_crs(data: geopandas.GeoDataFrame) -> bool:

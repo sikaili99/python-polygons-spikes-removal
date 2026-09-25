@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polygon-spike-removal"
+version = "1.0.0"
+description = "A command-line tool to remove spikes from polygons stored in GeoPackage format."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Mathews Musukuma" }]
+keywords = ["gis", "geospatial", "polygon", "spike", "geopackage", "geopandas"]
+dependencies = [
+    "click>=8.1",
+    "geopandas>=0.14",
+    "pyproj>=3.4",
+    "shapely>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/sikaili99/python-polygons-spikes-removal"
+
+[project.scripts]
+spike-removal = "main:main"
+
+[tool.setuptools]
+py-modules = ["main"]
+packages = ["utils"]
+
+[tool.pytest.ini_options]
+addopts = "-v"
+testpaths = ["tests"]

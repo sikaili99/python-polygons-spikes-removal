@@ -21,12 +21,9 @@ def main(filename: str, angle: float, distance: float, output: str):
     data = spike_utils.load_geopackage(filename)
 
     if not spike_utils.validate_crs(data):
-        raise (
-            """
-            The input file doesn't have a valid coordinate seference
-            system or it does not have a
-            geographic coordinate seference system.
-            """
+        raise click.ClickException(
+            "The input file does not have a valid geographic coordinate "
+            "reference system (CRS). A geographic CRS is required."
         )
 
     geod = spike_utils.extract_crs_geod(data)
@@ -57,6 +54,6 @@ def main(filename: str, angle: float, distance: float, output: str):
     spike_utils.save_geopackage(output, cleaned_data)
 
 
-if __name__ == '__main__':
-    """""The main entery where the application is run from"""
+if __name__ == "__main__":
+    # The main entry point where the application is run from.
     main()

@@ -1,35 +1,33 @@
 # Polygons spike removal application
-A Python application to remove spike from polygons
 
+A Python command-line tool to remove spikes from polygons.
 
 ## Description
 
-This tool can be used to remove spikes from input geometries stored in
-`geopackage` format. This is done by parsing the input geometry and evaluating
-each set of three contigous vertices against an evaluating strategy and
-removing from the output geometry the vertices that fail to pass the test.
-
+This tool removes spikes from input geometries stored in `geopackage` format.
+It parses the input geometry and evaluates each set of three contiguous
+vertices against an evaluation strategy, removing from the output geometry the
+vertices that fail the test.
 
 ## Example original gpkg file
 
-![example original file](https://github.com/Mathewsmusukuma/python-polygons-spikes-removal/blob/main/images/spiky-original-gpkg.png?raw=true)
-
-
+![example original file](https://github.com/sikaili99/python-polygons-spikes-removal/blob/main/images/spiky-original-gpkg.png?raw=true)
 
 ## Output of the gpkg file after running the tool
 
-![example output file](https://github.com/Mathewsmusukuma/python-polygons-spikes-removal/blob/main/images/spiky-output-gpkg.png?raw=true)
-
+![example output file](https://github.com/sikaili99/python-polygons-spikes-removal/blob/main/images/spiky-output-gpkg.png?raw=true)
 
 ## Installation
 
-This tool single external dependency is [geopandas](https://geopandas.org/).
+The main external dependency is [geopandas](https://geopandas.org/). Python
+3.9 or newer is required.
 
-Installation of the `python-polygons-spike-removal` tool can be done by cloning this repository as follows:
+Clone the repository and install into a virtual environment:
 
 ```
-$ git clone https://github.com/Mathewsmusukuma/python-polygons-spikes-removal.git
+$ git clone https://github.com/sikaili99/python-polygons-spikes-removal.git
 $ cd python-polygons-spikes-removal
+$ python3 -m venv .venv && source .venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
@@ -75,7 +73,7 @@ Options:
   --help             Show this message and exit.
 ```
 
-The tool accepts three diferent input arguments:
+The tool accepts three different input arguments:
 
 * `--angle`: The maximum angle, in degrees, that will be used to evaluate
 triplets of vertices. If the triplet being evaluated forms an angle greater
